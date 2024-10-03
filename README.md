@@ -1,10 +1,6 @@
 # chat_with_pdf
 Converse com documentos em PDF por meio de um Agente de IA
 
-<p align="center">
-<img src="http://img.shields.io/static/v1?label=STATUS&message=Em Desenvolvimento&color=YELLOW&style=for-the-badge"/>
-</p>
-
 Fontes:
 https://cloud.google.com/blog/products/ai-machine-learning/rag-with-bigquery-and-langchain-in-cloud
 https://python.langchain.com/docs/integrations/text_embedding/google_vertex_ai_palm/
