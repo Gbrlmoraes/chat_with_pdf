@@ -3,6 +3,9 @@ from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_pinecone import PineconeVectorStore
 from langchain_google_vertexai import VertexAIEmbeddings
 import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 
 def carrega_embeddings(caminho_arquivo: str):

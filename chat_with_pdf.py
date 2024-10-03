@@ -1,5 +1,8 @@
 from backend.llm_chat import llm_chat
 import streamlit as st
+from dotenv import load_dotenv
+
+load_dotenv()
 
 st.header("Conversando com um PDF! 📃")
 
