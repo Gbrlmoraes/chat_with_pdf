@@ -1,0 +1,6 @@
+__pycache__/
+.gitignore
+sample_pdfs/
+Pipfile
+Pipfile.lock
+README.md
