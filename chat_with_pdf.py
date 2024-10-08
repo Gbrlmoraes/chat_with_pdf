@@ -4,7 +4,34 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-st.header("Conversando com um PDF! 📃")
+# Configurações da página
+st.set_page_config(
+    page_title="Chat With PDF",
+    page_icon="📃",
+    layout="wide",
+    menu_items={"About": "https://github.com/Gbrlmoraes/chat_with_pdf"},
+)
+
+st.header("Bem-vindo ao ChatWithPDF! 📃")
+
+# Configurando sidebar
+with st.sidebar:
+
+    st.markdown(
+        """
+    ---
+    ## 📌 Links Úteis
+    ### **Conecte-se comigo:**
+    - 🔗 [LinkedIn](https://www.linkedin.com/in/gabrielmoraesmagalhaes/)
+    ---
+    ### **Acesse o projeto:**
+    - 💻 [Repositório do projeto](https://github.com/Gbrlmoraes/chat_with_pdf)
+    - 📄 [PDF utilizado na demo](https://www.pokemon.com/br/pokemon-estampas-ilustradas/regras)
+    ---
+    """
+    )
+
+    st.caption("Feito por [Gabriel Moraes](https://github.com/Gbrlmoraes/)")
 
 # Define variáveis que receberão o histórico de mensagens do chat
 if (
@@ -22,16 +49,20 @@ for participante, mensagem in st.session_state["historico_chat"]:
         st.markdown(mensagem)
 
 # Interação usuário-llm
-if prompt := st.chat_input("Faça uma pergunta"):
+if prompt := st.chat_input("Faça uma pergunta sobre o documento utilizado "):
 
     # Mostra a pergunta do usuário
     with st.chat_message("human"):
         st.markdown(prompt)
 
     # Gera a resposta utilizando langchain
-    resposta_llm = llm_chat(
-        prompt_usuario=prompt, historico_chat=st.session_state["historico_chat"]
-    )
+    try:
+        resposta_llm = llm_chat(
+            prompt_usuario=prompt, historico_chat=st.session_state["historico_chat"]
+        )
+    except Exception as e:
+        st.error("Ops, parece que você atingiu o limite de requisições", icon="😅")
+        st.stop()
 
     # resposta_llm = {"answer": f"O usuário disse {prompt}"}
 
