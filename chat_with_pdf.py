@@ -56,13 +56,9 @@ if prompt := st.chat_input("Faça uma pergunta sobre o documento utilizado  "):
         st.markdown(prompt)
 
     # Gera a resposta utilizando langchain
-    try:
-        resposta_llm = llm_chat(
-            prompt_usuario=prompt, historico_chat=st.session_state["historico_chat"]
-        )
-    except Exception as e:
-        st.error("Ops, parece que você atingiu o limite de requisições", icon="😅")
-        st.stop()
+    resposta_llm = llm_chat(
+        prompt_usuario=prompt, historico_chat=st.session_state["historico_chat"]
+    )
 
     # resposta_llm = {"answer": f"O usuário disse {prompt}"}
 
