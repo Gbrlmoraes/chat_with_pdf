@@ -49,7 +49,7 @@ for participante, mensagem in st.session_state["historico_chat"]:
         st.markdown(mensagem)
 
 # Interação usuário-llm
-if prompt := st.chat_input("Faça uma pergunta sobre o documento utilizado "):
+if prompt := st.chat_input("Faça uma pergunta sobre o documento utilizado  "):
 
     # Mostra a pergunta do usuário
     with st.chat_message("human"):
