@@ -1,5 +1,5 @@
 # Use a imagem base do Python 3.12 em Alpine
-FROM python:3.12.7-alpine3.20
+FROM python:3.12-slim
 
 WORKDIR /app
 
