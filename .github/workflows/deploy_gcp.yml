@@ -76,9 +76,9 @@ jobs:
           image: 'gcr.io/${{ secrets.GCP_PROJECT_ID }}/${{ env.IMAGE_NAME }}'
           flags: '--port=8501 --allow-unauthenticated'
           env_vars: |-
-            INDEX_NAME='${{ secrets.INDEX_NAME }}'
+            INDEX_NAME=${{ secrets.INDEX_NAME }}
             LANGCHAIN_API_KEY='${{ secrets.LANGCHAIN_API_KEY }}'
             LANGCHAIN_ENDPOINT='${{ secrets.LANGCHAIN_ENDPOINT }}'
             LANGCHAIN_PROJECT='${{ secrets.LANGCHAIN_PROJECT }}'
-            LANGCHAIN_TRACING_V2='${{ secrets.LANGCHAIN_TRACING_V2 }}'
+            LANGCHAIN_TRACING_V2=${{ secrets.LANGCHAIN_TRACING_V2 }}
             PINECONE_API_KEY=${{ secrets.PINECONE_API_KEY }}
