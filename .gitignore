@@ -164,3 +164,6 @@ cython_debug/
 
 # Credencial da conta de serviço
 *.json
+
+# Ignore generated credentials from google-github-actions/auth
+gha-creds-*.json

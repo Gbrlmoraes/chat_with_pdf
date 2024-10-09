@@ -12,7 +12,7 @@ st.set_page_config(
     menu_items={"About": "https://github.com/Gbrlmoraes/chat_with_pdf"},
 )
 
-st.header("Bem-vindo ao ChatWithPDF! 📃")
+st.header("Bem-vindo ao ChatWithPDF! 📃 ")
 
 # Configurando sidebar
 with st.sidebar:
