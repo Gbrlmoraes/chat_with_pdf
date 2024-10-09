@@ -31,11 +31,10 @@ name: 'Deploy to Cloud Run from Source'
 
 on:
   push:
-    branches:
-      - '"main"'
+    branches: [ "main" ]
+
   pull_request:
-    branches:
-      - '"main"'
+    branches: [ "main" ]
 
 env:
   PROJECT_ID: '${{ secrets.GCP_PROJECT_ID }}' # TODO: update to your Google Cloud project ID
