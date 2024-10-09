@@ -40,6 +40,7 @@ env:
   PROJECT_ID: '${{ secrets.GCP_PROJECT_ID }}' # TODO: update to your Google Cloud project ID
   REGION: 'us-central1' # TODO: update to your region
   SERVICE: 'chat-with-pdf'
+  IMAGE_NAME: 'chat-with-pdf'
 
 jobs:
   deploy:
@@ -63,13 +64,16 @@ jobs:
         with:
           credentials_json: '${{ secrets.GCP_JSON_KEY }}'
 
+      - name: 'Build Image'
+        run: 'gcloud builds submit --tag gcr.io/${{ secrets.GCP_PROJECT_ID }}/${{ env.IMAGE_NAME }}'
+
       - name: 'Deploy to Cloud Run'
         uses: 'google-github-actions/deploy-cloudrun@33553064113a37d688aa6937bacbdc481580be17' # google-github-actions/deploy-cloudrun@v2
         with:
           region: '${{ env.REGION }}'
           service: '${{ env.SERVICE }}'
           # NOTE: If using a different source folder, update the image name below:
-          source: './'
+          image: 'gcr.io/${{ secrets.GCP_PROJECT_ID }}/${{ env.IMAGE_NAME }}'
           flags: '--port=8501 --allow-unauthenticated'
           env_vars: |-
             INDEX_NAME='${{ secrets.INDEX_NAME }}'
