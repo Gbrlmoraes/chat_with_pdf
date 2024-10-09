@@ -1,6 +1,11 @@
+# Arquivos não úteis para o deploy
 __pycache__/
 .gitignore
+.env
 sample_pdfs/
 Pipfile
 Pipfile.lock
 README.md
+
+# Ignore generated credentials from google-github-actions/auth
+gha-creds-*.json
