@@ -30,9 +30,6 @@
 name: 'Deploy to Cloud Run from Source'
 
 on:
-  push:
-    branches: [ "main" ]
-
   pull_request:
     branches: [ "main" ]
 
