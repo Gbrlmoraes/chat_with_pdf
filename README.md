@@ -1,10 +1,12 @@
 # Chat With PDF
 _Converse com documentos em PDF por meio de um Agente de IA!_
+[Link para o projeto](https://chat-with-pdf-851464781998.us-central1.run.app)
 
 ---
 
 ## Arquitetura do projeto
 ---
+![arquitetura](https://github.com/user-attachments/assets/dd0ab7fb-b406-4c44-b203-242d39dbec38)
 
 ## Estrutura do repositório
 ```bash
